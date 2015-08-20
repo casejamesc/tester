@@ -21,10 +21,10 @@ class CreateBranch
     puts "creating branch and initial commit..."
     `git pull origin master; git checkout -b #{branch_name}; echo " " >> README.md; git commit -am "Create PRs [ci skip]"; git push origin HEAD;`
 
-    # # CREATE PULL REQUEST
-    # puts "creating pr..."
-    # url = "https://api.github.com/repos/#{project}/pulls"
-    # data = "{ \"title\": \"Fixes ##{issue_number}: #{pr_title}\", \"body\": \"##{issue_number}\", \"head\": \"#{branch_name}\", \"base\": \"master\" }"
+    # CREATE PULL REQUEST
+    puts "creating pr..."
+    url = "https://api.github.com/repos/#{project}/pulls"
+    data = "{ \"title\": \"Fixes ##{issue_number}: #{pr_title}\", \"body\": \"##{issue_number}\", \"head\": \"#{branch_name}\", \"base\": \"master\" }"
     # pr_number = `curl --request POST --header \'#{head}\' --data \'#{data}\' #{url} | jq .number`
 
     # # ADD ASSIGNEE
