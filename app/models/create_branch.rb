@@ -17,9 +17,10 @@ class CreateBranch
     branch_info = branch_name.split "#"
     pr_title = branch_info[0]
     issue_number = branch_info[1]
+    binding.pry
 
     puts "creating branch and initial commit..."
-    `git pull origin master; git checkout -b #{branch_name}; echo " " >> README.md; git commit -am "Create PRs [ci skip]"; git push origin HEAD;`
+    # `git pull origin master; git checkout -b #{branch_name}; echo " " >> README.md; git commit -am "Create PRs [ci skip]"; git push origin HEAD;`
 
     # CREATE PULL REQUEST
     puts "creating pr..."
