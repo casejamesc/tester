@@ -20,7 +20,7 @@ class CreateBranch
     binding.pry
 
     puts "creating branch and initial commit..."
-    # `git pull origin master; git checkout -b #{branch_name}; echo " " >> README.md; git commit -am "Create PRs [ci skip]"; git push origin HEAD;`
+    `git pull origin master; git checkout -b #{branch_name}; echo " " >> README.md; git commit -am "Create PRs [ci skip]"; git push origin HEAD;`
 
     # CREATE PULL REQUEST
     puts "creating pr..."
